@@ -8,6 +8,11 @@
 			//muy importante incluir la siguiente linea:
 			$(function() {			
 				
+				$("img").click(function(evento){
+					var imagen = $(evento.target);//Convierte al objeto puro del DOM a un objeto de JQuery
+					alert("Click, ID: "+imagen.attr("id"));
+					
+				});
 				
 			});
 		</script>

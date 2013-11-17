@@ -36,6 +36,22 @@
 		<script type="text/javascript">
 		
 		   //su codigo aqui
+		   $(function() {			
+				
+				$(".preview").click(function(evento){
+					var imagen_prev = $(evento.target);//Convierte al objeto puro del DOM a un objeto de JQuery
+					var src_img = imagen_prev.attr("data-src-imagen");
+					var imagen = $("#imagen-normal");
+					imagen.fadeOut("slow",function(){
+						imagen.attr("src", src_img);
+						imagen.fadeIn("slow");	
+					});
+					
+										
+				});
+				
+			});
+			
 		</script>
 	</head>
 	<body>

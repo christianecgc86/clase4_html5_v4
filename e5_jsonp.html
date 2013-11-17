@@ -17,14 +17,15 @@
 			function miFuncion(datos) {
 
 				$.each(datos.items, function(iteracion, foto) {
-					$("#contenedor").append("<img src=\"" + foto.media.m + "\" />");
+					$("#contenedor").append("<p>"+foto.title+"</p>");
+					//$("#contenedor").append("<img src=\"" + foto.media.m + "\" />");
 				});
 
 			};
 
 			$(function() {
-				var url = "http://api.flickr.com/services/feeds/photos_public.gne?ids=61481595@N05&format=json&jsoncallback=?";
-				$.getScript(url, miFuncion);
+				var url = "http://api.flickr.com/services/feeds/photos_public.gne?ids=61481595@N05&format=json&jsoncallback=miFuncion";
+				$.getScript(url);
 
 			});
 

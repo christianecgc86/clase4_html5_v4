@@ -58,7 +58,50 @@
 		<script>
 			//muy importante incluir la siguiente linea:
 			$(function() {			
-
+				//var imagen = $("#log");
+				//imagen.html("Nuevo texto");
+				
+				var pagina = $(document);
+				pagina.keypress(function(evento){
+					var log = $("#log");
+					log.html("Oprimio una tecla "+String.fromCharCode(evento.which));
+				});
+				
+				var imagen = $("#imagen");
+				imagen.click(function(evento){
+					
+					var log = $("#log");
+					log.html("Posición x: "+evento.pageX+" Posición y: "+evento.pageY+", Boton: "+evento.which); // En pixeles
+					
+				});
+				
+				imagen.mouseover(function(){
+					
+					var log = $("#log");
+					//log.html("Mouseover Ocurrio"); // En pixeles
+					
+				});
+				
+				imagen.mouseout(function(){
+					
+					var log = $("#log");
+					//log.html("Mouseout Ocurrio"); // En pixeles
+					
+				});
+				
+				imagen.mousedown(function(){
+					
+					var log = $("#log");
+					//log.html("Mousedown Ocurrio"); // En pixeles
+					
+				});
+				
+				imagen.mouseup(function(){
+					
+					var log = $("#log");
+					//log.html("Mouseup Ocurrio"); // En pixeles
+					
+				});
 			});
 		</script>
 	</head>

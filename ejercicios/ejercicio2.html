@@ -5,7 +5,7 @@
 		<title>javascript</title>
 
 		<style>
-			#mapa{
+			#mapa {
 				height: 600px;
 				width: 600px;
 			}
@@ -15,15 +15,36 @@
 		<script src="../javascript/jquery-1.10.2.min.js"></script>
 		<script src="../javascript/jquery.gomap-1.3.2.min.js"></script>
 
-		<script>		
-
+		<script>
+			$(function() {
+				var boton = $("button");
+				boton.click(function() {
+					navigator.geolocation.getCurrentPosition(function(posicion) {
+						var latitud = posicion.coords.latitude;
+						var longitud = posicion.coords.longitude;
+						$("#mapa").goMap({
+							zoom : 16,
+							maptype: "ROADMAP",
+							markers : [{
+								latitude:latitud,
+								longitude:longitud,
+								icon : "../imagenes/accept.png",
+								draggable : true,
+								title : "Mapa Ejercicio 3",
+								html : "<h1>Mapa Ejercicio 3</h1><p>Dirección</p>"
+							}]
+						});
+					});
+				});
+			});
 		</script>
-
 
 	</head>
 	<body>
-		
-		<button>Mostrar mapa</button>
-		<div id="mapa"> </div>
+
+		<button>
+			Mostrar mapa
+		</button>
+		<div id="mapa"></div>
 	</body>
 </html>
